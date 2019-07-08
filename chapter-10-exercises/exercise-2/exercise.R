@@ -32,31 +32,34 @@
 ### cell rather than the whole row!)
 
 # What was the 2018 salary of Employee 57
-
+salary_2018_emp_57 <- salaries[salaries$employees == "employee 57", "salaries_2018"]
 
 # How many employees got a raise?
-
+nrow(salaries[salaries$got_raise == FALSE, ])
 
 # What was the dollar value of the highest raise?
-
+highest_raise <- max(salaries$salary_change)
+highest_raise
 
 # What was the "name" of the employee who received the highest raise?
-
+who_highest_rasie <- salaries[salaries$salary_change == highest_raise, "employee"]
 
 # What was the largest decrease in salaries between the two years?
-
+highest_raise <- min(salaries$salary_change)
+highest_raise
 
 # What was the name of the employee who recieved largest decrease in salary?
-
+who_biggest_but <- salaries[salaries$salary_change == biggest_cut, "employee"]
 
 # What was the average salary change?
-
+avg_salary_change <- mean(slaries$salary_change)
+avg_salary_change
 
 # For people who did not get a raise, how much money did they lose on average?
-
-
+avg_salary_cut <- mean(salaries$salary_change[salaries$got_raise == FALSE])
+avg_salary_cut
 ## Consider: do the above averages match what you expected them to be based on 
 ## how you generated the salaries?
 
 # Write a .csv file of your salary data to your working directory
-
+write.csv(salaries, "")
